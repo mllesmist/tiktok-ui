@@ -44,7 +44,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                             <Header
                                 title="Language"
                                 onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1));
+                                    setHistory((prev) => prev.slice(0, 4));
                                 }}
                             />
                         )}
@@ -53,6 +53,9 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                     </PopperWrapper>
                 </div>
             )}
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {children}
         </Tippy>
