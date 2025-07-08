@@ -12,7 +12,8 @@ import {
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
-
+import { Link } from 'react-router-dom';
+import config from '~/config';
 import 'tippy.js/dist/tippy.css';
 
 import Button from '~/components/Button';
@@ -35,6 +36,23 @@ const MENU_ITEMS = [
                 { type: 'language', code: 'vi', title: 'Tiếng Việt' },
                 { type: 'language', code: 'fr', title: 'Français' },
                 { type: 'language', code: 'es', title: 'Español' },
+                { type: 'language', code: 'de', title: 'Deutsch' },
+                { type: 'language', code: 'it', title: 'Italiano' },
+                { type: 'language', code: 'pt', title: 'Português' },
+                { type: 'language', code: 'ja', title: '日本語' },
+                { type: 'language', code: 'ko', title: '한국어' },
+                { type: 'language', code: 'zh', title: '中文 (简体)' },
+                { type: 'language', code: 'ru', title: 'Русский' },
+                { type: 'language', code: 'th', title: 'ไทย' },
+                { type: 'language', code: 'id', title: 'Bahasa Indonesia' },
+                { type: 'language', code: 'ms', title: 'Bahasa Melayu' },
+                { type: 'language', code: 'tr', title: 'Türkçe' },
+                { type: 'language', code: 'ar', title: 'العربية' },
+                { type: 'language', code: 'pl', title: 'Polski' },
+                { type: 'language', code: 'nl', title: 'Nederlands' },
+                { type: 'language', code: 'sv', title: 'Svenska' },
+                { type: 'language', code: 'hi', title: 'हिन्दी' },
+                { type: 'language', code: 'uk', title: 'Українська' },
             ],
         },
     },
@@ -89,12 +107,14 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img
-                        src="https://raw.githubusercontent.com/sondnpt00343/tiktok-ui/53635fef3aad1ef411eb74238ee7560bf4fcc49d/src/assets/images/logo.svg"
-                        alt="Logo Tiktok"
-                    />
-                </div>
+                <Link to={config.home} className={cx('logo-link')}>
+                    <div className={cx('logo')}>
+                        <img
+                            src="https://raw.githubusercontent.com/sondnpt00343/tiktok-ui/53635fef3aad1ef411eb74238ee7560bf4fcc49d/src/assets/images/logo.svg"
+                            alt="Logo Tiktok"
+                        />
+                    </div>
+                </Link>
 
                 <Search />
 
